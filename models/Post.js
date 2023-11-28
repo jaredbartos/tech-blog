@@ -25,7 +25,7 @@ Post.init(
         model: 'user',
         key: 'id',
       },
-    }
+    },
   },
   {
     sequelize,
