@@ -6,7 +6,14 @@
 #logout:hover {
   cursor: pointer;
 }
+a:link {
+  color: black;
+}
 
 a:visited {
   color: black;
+}
+
+.post-title {
+  text-decoration: none;
 }
