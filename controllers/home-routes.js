@@ -43,12 +43,9 @@ router.get('/posts/:postID', withAuth, async (req, res) => {
     })
 
     const post = postData.get({ plain: true });
-
     const comments = commentData.map((comment) => comment.get({ plain: true }));
 
-    console.log(post);
-
-    console.log(comments);
+    res.render('post', { post, comments, loggedIn: req.session.loggedIn});
   } catch (err) {
     res.status(500).json(err);
   };
