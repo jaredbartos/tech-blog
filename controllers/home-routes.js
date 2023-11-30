@@ -42,14 +42,35 @@ router.get('/posts/:postID', withAuth, async (req, res) => {
       ],
     })
 
+    if (!postData) {
+      res.status(404).json({ message: 'No post exists with that id!' });
+      return;
+    };
+
     const post = postData.get({ plain: true });
     const comments = commentData.map((comment) => comment.get({ plain: true }));
 
-    res.render('post', { post, comments, loggedIn: req.session.loggedIn});
+    res.render('post', { post, comments, loggedIn: req.session.loggedIn });
   } catch (err) {
     res.status(500).json(err);
   };
 });
+
+router.get('/dashboard', withAuth, async (req, res) => {
+  try {
+    const postData = await Post.findAll({
+      where: {
+        user_id: req.session.userID,
+      },
+    });
+
+    const posts = postData.map((post) => post.get({ plain: true }));
+
+    res.render('dashboard', { posts, loggedIn: req.session.loggedIn });
+  } catch (err) {
+    res.status(500).json(err);
+  };
+})
 
 router.get('/login', (req, res) => {
   res.render('login');

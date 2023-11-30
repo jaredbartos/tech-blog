@@ -1,0 +1,6 @@
+<h2>Your Dashboard</h2>
+<ul>
+  {{#each posts as |post|}}
+  <li>{{title}} - {{formatDate updatedAt}}</li>
+  {{/each}}
+</ul>

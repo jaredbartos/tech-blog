@@ -1,3 +1,7 @@
+nav {
+  margin-bottom: 20px;
+}
+
 #logout {
   display: inline;
   text-decoration: underline;
@@ -16,4 +20,8 @@ a:visited {
 
 .post-title {
   text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
 }
