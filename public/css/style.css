@@ -1,0 +1,12 @@
+#logout {
+  display: inline;
+  text-decoration: underline;
+}
+
+#logout:hover {
+  cursor: pointer;
+}
+
+a:visited {
+  color: black;
+}
