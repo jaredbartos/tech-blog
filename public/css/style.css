@@ -10,6 +10,7 @@ nav {
 #logout:hover {
   cursor: pointer;
 }
+
 a:link {
   color: black;
 }
