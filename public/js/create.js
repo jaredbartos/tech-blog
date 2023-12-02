@@ -8,10 +8,7 @@ const createPost = async (e) => {
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({
-      title,
-      content,
-    }),
+    body: JSON.stringify({ title, content }),
   });
 
   if (response.ok) {
