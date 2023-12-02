@@ -15,8 +15,23 @@ router.post('/', async (req, res) => {
   };
 });
 
-router.put('/:postID', async (req, res) => {
+router.delete('/:postID', async (req, res) => {
+  try {
+    const postData = await Post.destroy({
+      where: {
+        id: req.params.postID,
+      },
+    });
 
+    if (!postData) {
+      res.status(404).json({ message: 'No post exists with that id!' });
+      return;
+    };
+
+    res.json(postData);
+  } catch (err) {
+    res.status(500).json(err);
+  };
 });
 
 

@@ -14,7 +14,7 @@
 {{#if new}}
 <h3>Create New Post</h3>
 
-<form>
+<form class="postForm">
   <label for="postTitle">Title</label>
   <br>
   <input id="postTitle" type="text">
@@ -33,7 +33,7 @@
 
 {{#if edit}}
 {{#with post}}
-<form>
+<form class="postForm" data-postid="{{id}}">
   <label for="postTitle">Title</label>
   <br>
   <input id="postTitle" type="text" value="{{title}}">
