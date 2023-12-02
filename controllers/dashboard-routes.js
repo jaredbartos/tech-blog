@@ -12,7 +12,23 @@ router.get('/', withAuth, async (req, res) => {
 
     const posts = postData.map((post) => post.get({ plain: true }));
 
-    res.render('dashboard', { posts, loggedIn: req.session.loggedIn });
+    res.render('dashboard', { posts, loggedIn: req.session.loggedIn, main: true });
+  } catch (err) {
+    res.status(500).json(err);
+  };
+});
+
+router.get('/new', withAuth, (req, res) => {
+  res.render('dashboard', { loggedIn: req.session.loggedIn, new: true });
+});
+
+router.get('/posts/:postID', withAuth, async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.postID);
+
+    const post = postData.get({ plain: true });
+
+    res.render('dashboard', { post, loggedIn: req.session.loggedIn, edit: true })
   } catch (err) {
     res.status(500).json(err);
   };

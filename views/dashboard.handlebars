@@ -1,9 +1,52 @@
 <h2>Your Dashboard</h2>
+
+{{#if main}}
 <ul>
   {{#each posts as |post|}}
-  <li>{{title}} - {{formatDate updatedAt}}</li>
+  <a href="/dashboard/posts/{{id}}"><li>{{title}} - {{formatDate updatedAt}}</li></a>
   {{/each}}
 </ul>
 <br>
 <br>
-<button type="button">Add New Post</button>
+<a href="/dashboard/new"><button id="newPostBtn" type="button">Add New Post</button></a>
+{{/if}}
+
+{{#if new}}
+<h3>Create New Post</h3>
+
+<form>
+  <label for="postTitle">Title</label>
+  <br>
+  <input id="postTitle" type="text">
+  <br>
+  <br>
+  <label for="postContent">Content</label>
+  <br>
+  <textarea id="postContent"></textarea>
+  <br>
+  <br>
+  <button id="createBtn" type="button">Create</button>
+</form>
+
+<script src="/js/create.js"></script>
+{{/if}}
+
+{{#if edit}}
+{{#with post}}
+<form>
+  <label for="postTitle">Title</label>
+  <br>
+  <input id="postTitle" type="text" value="{{title}}">
+  <br>
+  <br>
+  <label for="postContent">Content</label>
+  <br>
+  <textarea id="postContent">{{content}}</textarea>
+  <br>
+  <br>
+  <button id="updateBtn" type="button">Update Post</button>
+  <button id="deleteBtn" type="button">Delete Post</button>
+</form>
+{{/with}}
+<script src="/js/edit.js"></script>
+{{/if}}
