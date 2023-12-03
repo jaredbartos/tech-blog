@@ -1,6 +1,13 @@
-<section class="comment">
-  <p>
-    {{content}}
-    --{{user.username}}, {{formatDate createdAt}}
-  </p>
-</section>
+<div class="columns m-4">
+  <article class="box column is-narrow comment">
+    <div class="container">
+      <p class="m-4">
+        {{content}}
+      </p>
+      <p class="m-4 pl-4">
+        --{{user.username}}, {{formatDate createdAt}}
+      </p>
+      
+    </div>
+  </article>
+</div>

@@ -1,18 +1,28 @@
 {{#with post}}
 {{> post-details}}
 {{/with}}
-<form class="comment-form">
-  <label for="commentInput">Leave a comment:</label>
-  <textarea id="commentInput"></textarea>
+<div class="columns m-4">
+  <div class="column is-half field comment-form">
+    <label class="label" for="commentInput">Leave a comment:</label>
+    <div class="control">
+      <textarea class="textarea is-large" id="commentInput"></textarea>
+    </div>
 
-  <button id="commentSubmitBtn" type="button">Submit</button>
-</form>
+    <div class="control">
+      <button class="button is-light mt-2" id="commentSubmitBtn" type="button">Submit</button>
+    </div>
+  </div>
+</div>
 
 {{#if comments.length}}
-<h3>Comments</h3>
-{{#each comments as |comment|}}
-{{> comment-details}}
-{{/each}}
+<div class="columns m-4">
+  <div class="box column is-narrow has-background-light">
+    <h3 class="title is-4">Comments</h3>
+    {{#each comments as |comment|}}
+    {{> comment-details}}
+    {{/each}}
+  </div>
+</div>
 {{/if}}
 
 <script src="/js/post.js"></script>

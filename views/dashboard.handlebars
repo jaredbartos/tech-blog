@@ -1,24 +1,59 @@
-<h2>Your Dashboard</h2>
+<h2 class="title is-2 m-4">Your Dashboard</h2>
 
 {{#if main}}
-<ul>
-  {{#each posts as |post|}}
-  <a href="/dashboard/posts/{{id}}"><li>{{title}} - {{formatDate updatedAt}}</li></a>
-  {{/each}}
-</ul>
-<a href="/dashboard/new"><button id="newPostBtn" type="button">Add New Post</button></a>
+<div class="container is-fluid">
+  <ul>
+    {{#each posts as |post|}}
+    <div class="box">
+      <a href="/dashboard/posts/{{id}}">
+        <li class="is-size-4 is-flex is-justify-content-space-around">
+          <p>{{title}}</p>
+          <p>{{formatDate updatedAt}}</p>
+        </li>
+      </a>
+    </div>
+    {{/each}}
+  </ul>
+</div>
+
+<a href="/dashboard/new"><button class="button is-light m-6" id="newPostBtn" type="button">Add New Post</button></a>
 {{/if}}
 
 {{#if new}}
-<h3>Create New Post</h3>
+<div class="container is-fluid has-text-centered">
+  <h3 class="title is-3 m-6">Create New Post</h3>
+</div>
 
-<form class="postForm">
+<div class="container is-fluid">
+  <div class="columns is-centered">
+    <div class="column is-half-desktop">
+      <div class="field">
+        <label class="label" for="postTitle">Title</label>
+        <div class="control">
+          <input class="input" id="postTitle" type="text">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label" for="postContent">Content</label>
+        <div class="control">
+          <textarea class="textarea is-large" id="postContent"></textarea>
+        </div>
+        <div class="control">
+          <button class="button is-light mt-2" id="createBtn" type="button">Create</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{!-- <form class="postForm">
   <label for="postTitle">Title</label>
   <input id="postTitle" type="text">
   <label for="postContent">Content</label>
   <textarea id="postContent"></textarea>
   <button id="createBtn" type="button">Create</button>
-</form>
+</form> --}}
 
 <script src="/js/create.js"></script>
 {{/if}}
