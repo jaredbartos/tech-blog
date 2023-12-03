@@ -6,8 +6,6 @@
   <a href="/dashboard/posts/{{id}}"><li>{{title}} - {{formatDate updatedAt}}</li></a>
   {{/each}}
 </ul>
-<br>
-<br>
 <a href="/dashboard/new"><button id="newPostBtn" type="button">Add New Post</button></a>
 {{/if}}
 
@@ -16,15 +14,9 @@
 
 <form class="postForm">
   <label for="postTitle">Title</label>
-  <br>
   <input id="postTitle" type="text">
-  <br>
-  <br>
   <label for="postContent">Content</label>
-  <br>
   <textarea id="postContent"></textarea>
-  <br>
-  <br>
   <button id="createBtn" type="button">Create</button>
 </form>
 
@@ -35,15 +27,11 @@
 {{#with post}}
 <form class="postForm" data-postid="{{id}}">
   <label for="postTitle">Title</label>
-  <br>
   <input id="postTitle" type="text" value="{{title}}">
-  <br>
-  <br>
+  
   <label for="postContent">Content</label>
-  <br>
   <textarea id="postContent">{{content}}</textarea>
-  <br>
-  <br>
+
   <button id="updateBtn" type="button">Update Post</button>
   <button id="deleteBtn" type="button">Delete Post</button>
 </form>

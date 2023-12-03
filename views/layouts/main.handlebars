@@ -4,25 +4,62 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Tech Blog</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <header>
-    <h1>The Tech Blog</h1>
-  </header>
-  <nav>
-    <a href="/">Home</a>
-    {{#if loggedIn}}
-    <a href="/dashboard">Dashboard</a>
-    <div id="logout">Logout</div>
-    {{else}}
-    <a href="/login">Dashboard</a>
-    <a href="/login">Login</a>
-    {{/if}}
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item title is-1" href="/">
+        <i class="fa-solid fa-code fa-xl mr-1"></i>The Tech Blog
+      </a>
+
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start ml-5">
+        <a class="navbar-item" href="/">
+          <i class="fa-solid fa-house fa-l mr-1"></i>Home
+        </a>
+
+        <a class="navbar-item" href="/dashboard">
+          <i class="fa-solid fa-gauge fa-lg mr-1"></i>Dashboard
+        </a>
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons"></div>
+          {{#if loggedIn}}
+            <a class="button is-light" id="logout">
+              <i class="fa-solid fa-right-from-bracket fa-lg mr-2"></i>Logout
+            </a>
+          {{else}}
+            <a class="button is-light" href="/signup">
+              <i class="fa-solid fa-user-plus fa-lg mr-2"></i>Sign up
+            </a>
+            <a class="button is-light ml-1" href="/login">
+              <i class="fa-solid fa-person-walking-arrow-right fa-lg mr-2"></i>Log in
+            </a>
+          {{/if}}
+          </div>
+        </div>
+      </div>
+    </div>
   </nav>
+
   <main>
     {{{body}}}
   </main>
+
+  <script src="https://kit.fontawesome.com/7229f2fb74.js" crossorigin="anonymous"></script>
+  <script src="/js/main.js"></script>
 
   {{#if loggedIn}}
   <script src="/js/logout.js"></script>

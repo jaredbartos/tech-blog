@@ -4,15 +4,17 @@ const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
   try {
-    const postData = await Post.findAll({
-      where: {
-        user_id: req.session.userID,
-      },
-    });
+    if (req.session.userID) {
+      const postData = await Post.findAll({
+        where: {
+          user_id: req.session.userID,
+        },
+      });
 
-    const posts = postData.map((post) => post.get({ plain: true }));
+      const posts = postData.map((post) => post.get({ plain: true }));
 
-    res.render('dashboard', { posts, loggedIn: req.session.loggedIn, main: true });
+      res.render('dashboard', { posts, loggedIn: req.session.loggedIn, main: true });
+    };
   } catch (err) {
     res.status(500).json(err);
   };
