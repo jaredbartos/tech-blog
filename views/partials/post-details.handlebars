@@ -1,5 +1,7 @@
-<section class="post" data-postid="{{id}}">
-  <a class="post-title" href="/posts/{{id}}">{{title}}</a>
-  <h5>Posted by {{user.username}} on {{formatDate updatedAt}}</h5>
-  <p>{{content}}</p>
-</section>
+<div class="columns m-5">
+  <article class="box column is-narrow has-background-light post" data-postid="{{id}}">
+    <a class="title is-4 post-title" href="/posts/{{id}}">{{title}}</a>
+    <h3>Posted by {{user.username}} on {{formatDate updatedAt}}</h3>
+    <p class="mt-3">{{content}}</p>
+  </article>
+</div>

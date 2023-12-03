@@ -1,10 +1,4 @@
-/* HEADER */
-
-#logout:hover {
-  cursor: pointer;
-}
-
-a:link {
+/* a:link {
   color: black;
   text-decoration: none;
 }
@@ -19,4 +13,5 @@ a:visited {
 
 ul {
   list-style-type: none;
-}
+} */
+
