@@ -1,14 +1,27 @@
-<form>
-  <label for="loginUser">Username</label>
-  <input type="text" id="loginUser">
+<div class="container">
+  <div class="columns is-centered">
+    <div class="column is-half-desktop">
+      <div class="field">
+        <label class="label" for="loginUser">Username</label>
+        <div class="control">
+          <input class="input" id="loginUser" type="text">
+        </div>
+      </div>
 
-  <label for="loginPass">Password</label>
-  <input type="password" id="loginPass">
+      <div class="field">
+        <label class="label" for="loginPass">Password</label>
+        <div class="control">
+          <input class="input" id="loginPass" type="password">
+        </div>
+        <div class="control">
+          <button class="button is-light mt-2" id="loginBtn" type="button">Log in!</button>
+        </div>
+      </div>
 
-  <button id="loginBtn" type="button">Log in!</button>
-</form>
-
-<p>Don't have an account yet?</p>
-<a href="/signup">Sign up!</a>
+      <p>Don't have an account yet?</p>
+      <a href="/signup">Sign up!</a>
+    </div>
+  </div>
+</div>
 
 <script src="/js/login.js"></script>
