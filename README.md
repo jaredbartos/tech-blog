@@ -12,6 +12,7 @@ Share advice, voice concerns, and display your interest in the myriad of technol
 - [Usage](#usage)
 - [License](#license)
 - [Questions](#questions)
+- [Screenshots](#screenshots)
 
 ## Installation
 
@@ -40,3 +41,7 @@ My GitHub profile: https://github.com/jaredbartos
 If you have any further questions, please contact me through email.
 
 jaredbartos@gmail.com
+
+## Screenshots
+
+![Screenshot_1]
