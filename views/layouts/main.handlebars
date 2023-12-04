@@ -32,23 +32,28 @@
         </a>
       </div>
 
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="buttons"></div>
+      <div class="navbar-end">          
           {{#if loggedIn}}
+        <div class="navbar-item">
+          <p>You are logged in as <em>{{username}}</em></p>
+        </div>
+        <div class="navbar-item">
+          <div class="buttons">
             <a class="button is-light" id="logout">
               <i class="fa-solid fa-right-from-bracket fa-lg mr-2 has-text-primary-dark"></i>Logout
             </a>
+          </div>
+        </div>
           {{else}}
+        <div class="navbar-item">
             <a class="button is-light" href="/signup">
               <i class="fa-solid fa-user-plus fa-lg mr-2 has-text-success-dark"></i>Sign up
             </a>
             <a class="button is-light ml-1" href="/login">
               <i class="fa-solid fa-person-walking-arrow-right fa-lg mr-2 has-text-warning-dark"></i>Log in
             </a>
-          {{/if}}
-          </div>
         </div>
+          {{/if}}
       </div>
     </div>
   </nav>

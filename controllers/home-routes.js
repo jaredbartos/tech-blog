@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
 
     const posts = postData.map((post) => post.get({ plain: true }));
 
-    res.render('homepage', { posts, loggedIn: req.session.loggedIn });
+    res.render('homepage', { posts, loggedIn: req.session.loggedIn, username: req.session.username });
   } catch (err) {
     res.status(500).json(err);
   };
@@ -52,7 +52,7 @@ router.get('/posts/:postID', withAuth, async (req, res) => {
     const post = postData.get({ plain: true });
     const comments = commentData.map((comment) => comment.get({ plain: true }));
 
-    res.render('post', { post, comments, loggedIn: req.session.loggedIn });
+    res.render('post', { post, comments, loggedIn: req.session.loggedIn, username: req.session.username });
   } catch (err) {
     res.status(500).json(err);
   };
