@@ -1,4 +1,4 @@
-<h2 class="title is-2 m-4">Your Dashboard</h2>
+<h2 class="title is-2 m-6">Your Dashboard</h2>
 
 {{#if main}}
 <div class="container is-fluid">
@@ -14,9 +14,12 @@
     </div>
     {{/each}}
   </ul>
+  <div class="is-flex is-justify-content-center">
+    <a href="/dashboard/new"><button class="button is-link m-6" id="newPostBtn" type="button"><i class="fa-solid fa-plus has-text-warning mr-2"></i>Add New Post</button></a>
+  </div>
 </div>
 
-<a href="/dashboard/new"><button class="button is-light m-6" id="newPostBtn" type="button">Add New Post</button></a>
+
 {{/if}}
 
 {{#if new}}
@@ -37,10 +40,10 @@
       <div class="field">
         <label class="label" for="postContent">Content</label>
         <div class="control">
-          <textarea class="textarea is-large" id="postContent"></textarea>
+          <textarea class="textarea is-large is-size-6" id="postContent"></textarea>
         </div>
         <div class="control">
-          <button class="button is-light mt-2" id="createBtn" type="button">Create</button>
+          <button class="button is-link mt-2" id="createBtn" type="button"><i class="fa-solid fa-pen mr-2 has-text-warning"></i>Create</button>
         </div>
       </div>
     </div>
@@ -69,16 +72,16 @@
       <div class="field">
         <label class="label" for="postContent">Content</label>
         <div class="control">
-          <textarea class="textarea is-large" id="postContent">{{content}}</textarea>
+          <textarea class="textarea is-large is-size-6" id="postContent">{{content}}</textarea>
         </div>
       </div>
 
       <div class="field is-grouped">
         <div class="control">
-          <button class="button is-light mt-2" id="updateBtn" type="button">Update Post</button>
+          <button class="button is-link mt-2" id="updateBtn" type="button"><i class="fa-solid fa-check fa-lg mr-2 has-text-success"></i>Update Post</button>
         </div>
         <div class="control">
-          <button class="button is-light mt-2" id="deleteBtn" type="button">Delete Post</button>
+          <button class="button is-warning mt-2" id="deleteBtn" type="button"><i class="fa-solid fa-xmark has-text-danger-dark fa-lg mr-2"></i>Delete Post</button>
         </div>
       </div>
     </div>
