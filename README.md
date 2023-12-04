@@ -3,6 +3,10 @@
 
 ![Homepage_Screenshot](./assets/images/homepage_screenshot.png)
 
+## Link to Deployed App
+
+[The Tech Blog](https://whispering-headland-36327-fcf93ff6f15e.herokuapp.com/)
+
 ## Description
 
 The Tech Blog is a CMS-style blog site built using the Model-View-Controller paradigm and is intended to be used by developers who love coding and love talking about coding.
@@ -26,7 +30,7 @@ Any Web Browser
 
 ## Usage
 
-To join in on The Tech Blog, visit the link that is provided below, and you are able to view the homepage without an account.
+To join in on The Tech Blog, visit the link that is provided at the top of the README, and you are able to view the homepage without an account.
 It will display the current blogs that have been written on the site, and after signing up using the Sign Up link, you will be able to
 create your own posts when visiting your dashboard and also comment on other posts.
 
