@@ -12,7 +12,14 @@ const userSignUp = async (e) => {
       body: JSON.stringify({ username, password }),
     });
 
-    if (response.ok) {
+    if (!response.ok) {
+      const res = await response.json();
+      if (res.errors[0].message === "username must be unique") {
+        alert('Username already taken. Please try again.');
+      } else {
+        alert(res.errors[0].message);
+      };
+    } else {
       document.location.replace('/')
     };
   } else if (username && password.length < 8) {
