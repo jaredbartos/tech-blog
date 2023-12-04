@@ -1,3 +1,4 @@
+// Function to login user or return error, if needed
 const userLogin = async (e) => {
   e.preventDefault();
   const username = document.querySelector('#loginUser').value.trim();

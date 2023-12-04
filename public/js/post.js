@@ -1,3 +1,4 @@
+// Function to add comment to post
 const addComment = async (e) => {
   e.preventDefault();
   const content = document.querySelector('#commentInput').value;

@@ -1,3 +1,4 @@
+// Function to create post and return back to dashboard
 const createPost = async (e) => {
   e.preventDefault();
   const title = document.querySelector('#postTitle').value;

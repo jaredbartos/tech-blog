@@ -9,6 +9,7 @@ class User extends Model {
   };
 };
 
+// Initiate User model
 User.init(
   {
     id: {
@@ -32,6 +33,7 @@ User.init(
   },
   {
     hooks: {
+      // Hash users' passwords when seeding
       async beforeBulkCreate(users) {
         for (let i = 0; i < users.length; i++) {
           users[i].password = await bcrypt.hash(users[i].password, 10);

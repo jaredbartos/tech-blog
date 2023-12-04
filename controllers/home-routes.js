@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
+// GET route to show all posts on homepage
 router.get('/', async (req, res) => {
   try {
     const postData = await Post.findAll({
@@ -18,9 +19,10 @@ router.get('/', async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   };
+});
 
-})
-
+// GET route for individual post and comments of post
+// Will only show if user is logged in
 router.get('/posts/:postID', withAuth, async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.postID, {
@@ -56,10 +58,12 @@ router.get('/posts/:postID', withAuth, async (req, res) => {
   };
 });
 
+// GET route for login page
 router.get('/login', (req, res) => {
   res.render('login');
 });
 
+// GET route for signup page
 router.get('/signup', (req, res) => {
   res.render('signup');
 });

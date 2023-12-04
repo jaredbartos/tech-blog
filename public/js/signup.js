@@ -1,3 +1,4 @@
+// Function to sign up user or display error, if needed
 const userSignUp = async (e) => {
   e.preventDefault();
   const username = document.querySelector('#signupUser').value.trim();

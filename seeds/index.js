@@ -3,6 +3,7 @@ const seedUser = require('./userData');
 const seedPost = require('./postData');
 const seedComment = require('./commentData');
 
+// Seed all database tables
 const seedAll = async () => {
   await sequelize.sync({ force: true });
 

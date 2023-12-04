@@ -1,7 +1,9 @@
 const router = require('express').Router();
 const { User, Post } = require('../models');
+// Import custom middleware
 const withAuth = require('../utils/auth');
 
+// GET route for dashboard posts retrieval
 router.get('/', withAuth, async (req, res) => {
   try {
     if (req.session.userID) {
@@ -20,10 +22,12 @@ router.get('/', withAuth, async (req, res) => {
   };
 });
 
+// GET route to render the new post page for the dashboard
 router.get('/new', withAuth, (req, res) => {
   res.render('dashboard', { loggedIn: req.session.loggedIn, new: true });
 });
 
+// GET route to retrieve post for updating or deleting on client-side
 router.get('/posts/:postID', withAuth, async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.postID);

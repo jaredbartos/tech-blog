@@ -1,3 +1,4 @@
+// Function to update post
 const updatePost = async (e) => {
   e.preventDefault();
 
@@ -20,6 +21,7 @@ const updatePost = async (e) => {
   };
 };
 
+// Function to delete post
 const deletePost = async (e) => {
   e.preventDefault();
 
