@@ -12,8 +12,6 @@ Share advice, voice concerns, and display your interest in the myriad of technol
 - [Usage](#usage)
 - [License](#license)
 - [Questions](#questions)
-- [Link to Demonstration Video](#link-to-demonstration-video)
-- [Screenshot](#screenshot)
 
 ## Installation
 
