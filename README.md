@@ -1,6 +1,8 @@
 # Tech Blog
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+![Homepage_Screenshot](./assets/images/homepage_screenshot.png)
+
 ## Description
 
 The Tech Blog is a CMS-style blog site built using the Model-View-Controller paradigm and is intended to be used by developers who love coding and love talking about coding.
@@ -44,4 +46,7 @@ jaredbartos@gmail.com
 
 ## Screenshots
 
-![Screenshot_1]
+![Dashboard_Screenshot](./assets/images/dashboard_screenshot.png)
+![Edit_Screenshot](./assets/images/edit_screenshot.png)
+![New_Screenshot](./assets/images/new_screenshot.png)
+![Post_Screenshot](./assets/images/post_screenshot.png)
