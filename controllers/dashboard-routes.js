@@ -6,7 +6,6 @@ const withAuth = require('../utils/auth');
 // GET route for dashboard posts retrieval
 router.get('/', withAuth, async (req, res) => {
   try {
-    if (req.session.userID) {
       const postData = await Post.findAll({
         where: {
           user_id: req.session.userID,
@@ -16,7 +15,6 @@ router.get('/', withAuth, async (req, res) => {
       const posts = postData.map((post) => post.get({ plain: true }));
 
       res.render('user-posts', { posts, loggedIn: req.session.loggedIn, username: req.session.username, layout: 'dashboard', });
-    };
   } catch (err) {
     res.status(500).json(err);
   };
