@@ -1,0 +1,17 @@
+<div class="container is-fluid">
+  <ul>
+    {{#each posts as |post|}}
+    <div class="box">
+      <a href="/dashboard/posts/{{id}}">
+        <li class="is-size-5 is-flex is-justify-content-space-between">
+          <p>{{title}}</p>
+          <p>{{formatDate updatedAt}}</p>
+        </li>
+      </a>
+    </div>
+    {{/each}}
+  </ul>
+  <div class="is-flex is-justify-content-center">
+    <a href="/dashboard/new"><button class="button is-link m-6" id="newPostBtn" type="button"><i class="fa-solid fa-plus has-text-warning mr-2"></i>Add New Post</button></a>
+  </div>
+</div>

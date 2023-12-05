@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Tech Blog</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item title is-2 has-text-link-dark" href="/">
+        <i class="fa-solid fa-code fa-l mr-1"></i>The Tech Blog
+      </a>
+
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarItems">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarItems" class="navbar-menu">
+      <div class="navbar-start ml-5">
+        <a class="navbar-item" href="/">
+          <i class="fa-solid fa-house fa-l mr-1 has-text-success"></i>Home
+        </a>
+
+        <a class="navbar-item" href="/dashboard">
+          <i class="fa-solid fa-gauge fa-lg mr-1 has-text-danger"></i>Dashboard
+        </a>
+      </div>
+
+      <div class="navbar-end">          
+          {{#if loggedIn}}
+        <div class="navbar-item">
+          <p>You are logged in as <em>{{username}}</em></p>
+        </div>
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-light" id="logout">
+              <i class="fa-solid fa-right-from-bracket fa-lg mr-2 has-text-primary-dark"></i>Logout
+            </a>
+          </div>
+        </div>
+          {{else}}
+        <div class="navbar-item">
+            <a class="button is-light" href="/signup">
+              <i class="fa-solid fa-user-plus fa-lg mr-2 has-text-success-dark"></i>Sign up
+            </a>
+            <a class="button is-light ml-1" href="/login">
+              <i class="fa-solid fa-person-walking-arrow-right fa-lg mr-2 has-text-warning-dark"></i>Log in
+            </a>
+        </div>
+          {{/if}}
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <h2 class="title is-2 m-6">Your Dashboard</h2>
+    {{{body}}}
+  </main>
+
+  <script src="https://kit.fontawesome.com/7229f2fb74.js" crossorigin="anonymous"></script>
+  <script src="/js/main.js"></script>
+
+  {{#if loggedIn}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+</body>
+</html><h2 class="title is-2 m-6">Your Dashboard</h2>

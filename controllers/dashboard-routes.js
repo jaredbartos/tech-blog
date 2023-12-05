@@ -15,7 +15,7 @@ router.get('/', withAuth, async (req, res) => {
 
       const posts = postData.map((post) => post.get({ plain: true }));
 
-      res.render('dashboard', { posts, loggedIn: req.session.loggedIn, main: true, username: req.session.username });
+      res.render('user-posts', { posts, loggedIn: req.session.loggedIn, username: req.session.username, layout: 'dashboard', });
     };
   } catch (err) {
     res.status(500).json(err);
@@ -24,7 +24,7 @@ router.get('/', withAuth, async (req, res) => {
 
 // GET route to render the new post page for the dashboard
 router.get('/new', withAuth, (req, res) => {
-  res.render('dashboard', { loggedIn: req.session.loggedIn, new: true, username: req.session.username });
+  res.render('new-post', { loggedIn: req.session.loggedIn, layout: 'dashboard', username: req.session.username });
 });
 
 // GET route to retrieve post for updating or deleting on client-side
@@ -34,7 +34,7 @@ router.get('/posts/:postID', withAuth, async (req, res) => {
 
     const post = postData.get({ plain: true });
 
-    res.render('dashboard', { post, loggedIn: req.session.loggedIn, edit: true, username: req.session.username })
+    res.render('edit-post', { post, loggedIn: req.session.loggedIn, layout: 'dashboard', username: req.session.username })
   } catch (err) {
     res.status(500).json(err);
   };
