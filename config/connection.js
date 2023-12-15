@@ -4,7 +4,9 @@ require('dotenv').config();
 // Set up Sequelize connection
 let sequelize;
 
-if (process.env.JAWSDB_URL) {
+if (process.env.POSTGRES_DB) {
+  sequelize = new Sequelize(process.env.POSTGRES_DB);
+} else if (process.env.JAWSDB_URL) {
   sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
   sequelize = new Sequelize(
@@ -17,6 +19,6 @@ if (process.env.JAWSDB_URL) {
       port: 3306,
     },
   );
-}
+};
 
 module.exports = sequelize;
